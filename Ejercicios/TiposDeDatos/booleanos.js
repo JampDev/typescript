@@ -1,0 +1,14 @@
+var esNuevo = false;
+var deseaImprimir = true;
+var aceptaDescuento = (15 + 18 == 33);
+console.log("Este booleano es: " + aceptaDescuento);
+var juan = "juan";
+var juan2 = "juan";
+var sonNombresIguales = (juan == juan2);
+console.log("Este booleano es: " + sonNombresIguales);
+var sonAmbosVerdaderos = sonNombresIguales && aceptaDescuento;
+console.log("El resultadp de 2 booleanos es: " + sonAmbosVerdaderos);
+var listaNumeros1 = 100;
+var listaNumeros2 = 120;
+var tamaniosIguales = (listaNumeros1 == listaNumeros2);
+console.log("El tamaño de las listas son iguales " + tamaniosIguales);

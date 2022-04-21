@@ -1,0 +1,6 @@
+#Instalar de forma global
+npm install -g typescript
+#Compilar
+tsc archivo.ts
+#Compilar con el observable
+tsc archivo.ts --watch
