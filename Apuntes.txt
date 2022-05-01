@@ -1,6 +1,15 @@
-#Instalar de forma global
+#Instalar TS de forma global
 npm install -g typescript
 #Compilar
 tsc archivo.ts
 #Compilar con el observable
 tsc archivo.ts --watch
+
+#Instalar Angular global
+npm install -g @angular/cli
+#Crear proyecto
+ng new nombre
+#Crear servidor
+ng serve --open
+#Crear un componente
+ng generate component nombre

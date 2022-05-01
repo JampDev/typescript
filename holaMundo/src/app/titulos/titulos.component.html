@@ -1,0 +1,17 @@
+<h1>Hola componente angular</h1>
+<!--INTERPOLACIÓN, PARA MOSTRAR INFORMACION-->
+<h1>Bienvenida {{nombre}} {{apellido}}</h1>
+<h1>Hola soy el nuevo alumno {{alumno.nombre}} {{alumno.apellido}}</h1>
+<!--PROPERTY BINDING-->
+<input type="text" [(ngModel)]="soyInput">
+<!--<img [src]="imagen">-->
+<!--TWO WAY BINDING, AFECTA A LA PANTALLA Y VARIABLE-->
+<p>{{soyInput}}</p>
+
+<label>Correo: </label>
+<input type="email" [(ngModel)]="correo">
+<br><br>
+<label>Contraseña: </label>
+<input type="password" [(ngModel)]="contrasenia">
+<br><br>
+<button (click)="ingresar()">Iniciar</button>
