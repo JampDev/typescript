@@ -9,9 +9,18 @@
 <p>{{soyInput}}</p>
 
 <label>Correo: </label>
-<input type="email" [(ngModel)]="correo">
+<input type="email" (ngModelChange)="escribirCorreo()" [(ngModel)]="correo">
 <br><br>
 <label>Contraseña: </label>
-<input type="password" [(ngModel)]="contrasenia">
+<input type="password" (ngModelChange)="escribirModelo()" (keydown)="ingresar($event)" [(ngModel)]="contrasenia">
 <br><br>
-<button (click)="ingresar()">Iniciar</button>
+<button (click)="ingresar($event)">Iniciar</button>
+<br><br>
+<button (dblclick)="llamarMensaje()">Iniciar</button>
+<br><br>
+<input type="text" (input)="escribir($event)">
+<br><br>
+<input type="text" (focus)="colorearFondo($event)">
+<br><br>
+<img src="https://educacion30.b-cdn.net/wp-content/uploads/2019/06/homer.gif" (mouseenter)="cambiarTamanio($event)"
+(mouseleave)="reducirTamanio($event)" style="width: 200px; height: 200px;">
