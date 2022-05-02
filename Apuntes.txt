@@ -13,3 +13,5 @@ ng new nombre
 ng serve --open
 #Crear un componente
 ng generate component nombre
+#Crear un pipe
+ng generate pipe nombre
