@@ -1,0 +1,26 @@
+<!--
+<ul>
+    <li><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/pipes">Pipes</a></li>
+    <li><a routerLink="/ejemplo">Ejemplo</a></li>
+    <li><a routerLink="/directiva">Directiva</a></li>
+</ul>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">         
+              <li><a class="dropdown-item" routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
+              <li><a class="dropdown-item" routerLink="/pipes" routerLinkActive="active">Pipes</a></li>
+              <li><a class="dropdown-item" routerLink="/ejemplo" routerLinkActive="active">Ejemplo</a></li>
+              <li><a class="dropdown-item" routerLink="/directiva" routerLinkActive="active">Directiva</a></li>                    
+        </ul>
+      </div>
+    </div>
+  </nav>
