@@ -1,0 +1,33 @@
+.producto{
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.tab{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+}
+
+.tabContenido{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background: rgb(204, 204, 195);
+}
+
+.cuadrado{
+    width: 200px;
+    height: 200px;
+    background: green;
+}
+
+.textoImportante{
+    color: red;
+}
+
+.textoGrande{
+    font-size: 20px;
+}

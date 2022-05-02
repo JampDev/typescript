@@ -1,0 +1,53 @@
+<!--
+<div *ngIf="!cargando">
+    <p>Hola, termino de cargar</p>
+</div>
+<img *ngIf="cargando" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921">
+<br><br>
+<button (click)="alternar()">Alternar</button>
+<br><br>
+-->
+<!--
+<div *ngFor="let nombre of nombres">
+    <p>Hola mi nombre es: {{nombre}}</p>
+</div>
+
+<div *ngFor="let producto of productos" class="producto">
+    <p>El producto es: {{producto.nombre}}</p>
+    <p>Stock: {{producto.stock}}</p>
+    <p>Fabricante: {{producto.fabricante}}</p>
+    <p>Fecha de vencimiento: {{producto.fechaVencimiento}}</p>
+</div>
+-->
+<!--
+<div class="tab" [ngSwitch]="pestania">
+    <button (click)="cambiarPestania('perfil')">Perfil</button>
+    <button (click)="cambiarPestania('puntos')">Puntos</button>
+    <button (click)="cambiarPestania('info')">Información</button>
+    <div class="tabContenido">
+        <p *ngSwitchCase="'perfil'">Este es su perfil</p>
+        <p *ngSwitchCase="'puntos'">Estos sos sus puntos</p>
+        <p *ngSwitchCase="'info'">Esta es su Información</p>
+        <p *ngSwitchDefault>Seleccione un tab</p>
+    </div>
+</div>
+-->
+<button (click)="alternarFondo()">Alterna</button>
+<div [ngClass]="{'cuadrado': mostrarCuadrado}">
+    <p>Este componente debería aparecer con un fondo verde</p>
+</div>
+
+<div *ngFor="let producto of productos" class="producto">
+    <p [ngClass]="{'textoImportante': producto.esImportante, 'textoGrande': producto.textoGrande}">El producto es: {{producto.nombre}}</p>
+    <p [ngClass]="{'textoImportante': producto.esImportante}">Stock: {{producto.stock}}</p>
+    <p [ngClass]="{'textoImportante': producto.esImportante}">Fabricante: {{producto.fabricante}}</p>
+    <p [class.textoImportante]="producto.esImportante">Fecha de vencimiento: {{producto.fechaVencimiento}}</p>
+</div>
+
+
+
+
+
+
+
+
