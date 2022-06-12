@@ -11,6 +11,11 @@ import { PipeComponent } from './pipe/pipe.component';
 import { ContinuaraPipe } from './continuara.pipe';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { AgregarUsuarioComponent } from './usuarios/agregar-usuario/agregar-usuario.component';
+import { ArticuloComponent } from './articulo/articulo.component';
+import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 
 
 @NgModule({
@@ -22,7 +27,12 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
     PipeComponent,
     ContinuaraPipe,
     Pagina404Component,
-    EncabezadoComponent
+    EncabezadoComponent,
+    UsuariosComponent,
+    EditarUsuarioComponent,
+    AgregarUsuarioComponent,
+    ArticuloComponent,
+    ArticuloDetalleComponent
   ],
   imports: [
     BrowserModule,
