@@ -1,1 +1,6 @@
-<p>articulo-detalle works!</p>
+<div class="container">
+    <h4>El producto seleccionado es: {{articulo.nombre}}</h4>
+    <h3>El precio es: {{articulo.precio | currency}}</h3>
+    <h5>Precio Mayorista: {{articulo.precioMayorista | currency: '$'}}</h5>
+    <p>Stock: {{articulo.stock}}</p>
+</div>
