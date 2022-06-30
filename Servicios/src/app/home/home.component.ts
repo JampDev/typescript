@@ -18,26 +18,9 @@ export class HomeComponent implements OnInit {
     private routa: Router) { }
 
   ngOnInit(): void {
-    this.articulos.push(
-      {
-        titulo: 'Curso JS',
-        descripcion: 'Desarrollo web de 0 a experto',
-        fecha: new Date(),
-        usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-      },
-      {
-        titulo: 'Curso Angular',
-        descripcion: 'La Biblia de Angular',
-        fecha: new Date('04/25/2019'),
-        usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-      },
-      {
-        titulo: 'Curso Spring',
-        descripcion: 'Desarrollo de microservicios',
-        fecha: new Date(),
-        usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-      }
-    );
+    this.ArticuloInyectado.leerNoticias().subscribe((articulosApi)=>{
+      this.articulos = articulosApi;
+    });
   }
 
   irDetalle(articulo:Articulo){
