@@ -1,0 +1,7 @@
+HTTP es un protocolo de comunicación.
+
+BE se comunica con el BE por medio de peticiones HTTP.
+
+Métodos: Get, Post, Put y Delete son los mas utilizados.
+
+Observable y Subscribe

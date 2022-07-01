@@ -21,6 +21,17 @@ export class HomeComponent implements OnInit {
     this.ArticuloInyectado.leerNoticias().subscribe((articulosApi)=>{
       this.articulos = articulosApi;
     });
+    
+    /*
+    let artCrear: Articulo = new Articulo();
+    artCrear.body = 'Body del articulo';
+    artCrear.title = 'Título de prubea';
+    artCrear.userId = 4;
+    this.ArticuloInyectado.guardarArticulo(artCrear).subscribe((articuloCreado)=>{
+      debugger;
+      this.articulos.push(articuloCreado);
+    });
+    */
   }
 
   irDetalle(articulo:Articulo){
@@ -28,4 +39,15 @@ export class HomeComponent implements OnInit {
     this.routa.navigateByUrl('/articulo-detalle');
   }
 
+  borrar(id:number){
+    this.ArticuloInyectado.borrarArticulo(id).subscribe((datos)=>{
+      console.log(datos);
+      console.log('Articulo eliminado');
+    });
+  }
+
+  actualizar(articulo: Articulo){
+    this.ArticuloInyectado.articulo = articulo;
+    this.routa.navigateByUrl('/agregar-articulo/false');
+  }
 }
