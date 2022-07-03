@@ -1,0 +1,8 @@
+<button class="btn btn-primary" (click)="guardarCliente()">Guardar Cliente</button>
+<button class="btn btn-secondary" (click)="leerClientes()">Listar Clientes</button>
+<div class="container">
+    <div *ngFor="let cliente of clientes">
+        <p>Cliente: {{cliente.nombre}} {{cliente.apellido}}</p>
+        <p>Edad: {{cliente.edad}}</p>
+    </div>
+</div>
