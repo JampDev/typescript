@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../model/cliente';
+import { Producto } from '../model/producto';
 
 @Component({
   selector: 'app-clientes',
@@ -8,32 +9,66 @@ import { Cliente } from '../model/cliente';
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Array<Cliente> = new Array<Cliente>();
-
   constructor() { }
 
   ngOnInit(): void {
-    /*
-    this.clientes.push(
+  }
+
+  guardarCliente() {
+    let clientes: Array<Cliente> = new Array<Cliente>();
+    clientes.push(
       {
-        nombre: 'Luis',
+        nombre: 'Ana',
         apellido: 'Lopez',
         edad: 25
       },
       {
         nombre: 'Alfonso',
         apellido: 'Pérez',
-        edad: 26
-      }
-    );
-    */
+        edad: 28
+      });
+    localStorage.setItem('clientes', JSON.stringify(clientes));
   }
 
-  guardarCliente(){
-    localStorage.setItem('clientes',JSON.stringify(this.clientes));
+  guardarProducto() {
+    let productos: Array<Producto> = new Array<Producto>();
+    productos.push(
+      {
+        nombre: 'Maíz',
+        precio: 25
+      },
+      {
+        nombre: 'Agua de Botellon',
+        precio: 2
+      });
+    localStorage.setItem('productos', JSON.stringify(productos));
   }
 
-  leerClientes(){
-    this.clientes = JSON.parse(localStorage.getItem('clientes')!);
+  eliminarCliente() {
+    localStorage.removeItem('clientes');
+  }
+
+  eliminarProducto() {
+    localStorage.removeItem('productos');
+  }
+
+  eliminarTodo() {
+    localStorage.clear();
+  }
+
+  get clientesLocales(): Cliente[] {
+    let clientesLS: Cliente[] = JSON.parse(localStorage.getItem('clientes')!);
+    if (clientesLS == null) {
+      return new Array<Cliente>();
+    }
+    return clientesLS;
+  }
+
+  get productosLocales(): Producto[] {
+    let productosLS: Producto[] = JSON.parse(localStorage.getItem('productos')!);
+    if (productosLS == null) {
+      return new Array<Producto>();
+    }
+    return productosLS;
   }
 }

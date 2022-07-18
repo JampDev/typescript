@@ -1,0 +1,9 @@
+.clienteContenedor{
+    border: 1px solid red;
+    margin-top: 15px;
+}
+
+.productoContendor{
+    border: 1px solid blue;
+    margin-top: 15px;
+}
