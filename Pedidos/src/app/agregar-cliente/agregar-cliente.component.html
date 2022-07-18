@@ -1,0 +1,19 @@
+<div class="container">
+    <form action="" [formGroup]="datosFormulario">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" class="form-control" formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input id="apellido" type="text" class="form-control" formControlName="apellido">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <textarea id="direccion" type="text" class="form-control" formControlName="direccion">
+
+            </textarea>
+        </div>
+        <button [disabled]="!datosFormulario.valid" (click)="agregar()" class="btn btn-primary mt-2">Agregar</button>
+    </form>
+</div>

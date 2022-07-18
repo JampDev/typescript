@@ -7,6 +7,12 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { HomeComponent } from './home/home.component';
+import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClientesService } from './services/clientes.service';
+import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
+import { ProductosService } from './services/productos.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +20,21 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     EncabezadoComponent,
     ClientesComponent,
     ProductosComponent,
-    PedidosComponent
+    PedidosComponent,
+    HomeComponent,
+    AgregarClienteComponent,
+    AgregarProductoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ClientesService,
+    ProductosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
