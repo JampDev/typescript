@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cliente } from '../models/cliente';
 import { ClientesService } from '../services/clientes.service';
+import { PedidosService } from '../services/pedidos.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,9 @@ export class HomeComponent implements OnInit {
 
   listaClientes: Array<Cliente> = new Array<Cliente>();
 
-  constructor(public clienteServicio: ClientesService) { }
+  constructor(public clienteServicio: ClientesService,
+    public pedidosServicio: PedidosService,
+    public route: Router) { }
 
   ngOnInit(): void {
     this.listaClientes = this.clienteServicio.clientesLS;
@@ -25,6 +29,12 @@ export class HomeComponent implements OnInit {
       }     
       return null;   
     });
+  }
+
+  irProductos(cliente: Cliente){
+    this.pedidosServicio.pedido.clienteId = cliente.id;
+    this.pedidosServicio.pedido.clienteNombre = cliente.nombre + ' ' + cliente.apellido;
+    this.route.navigateByUrl("/productos");
   }
 
 }

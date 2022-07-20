@@ -13,7 +13,7 @@
                     <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
                     <h6 class="card-subtitle">{{cliente.id}}</h6>
                     <p class="card-text">{{cliente.direccion}}</p>
-                    <a href="#" class="card-link">Agregar</a>
+                    <a (click)="irProductos(cliente)" class="card-link">Agregar</a>
                     <a href="#" class="card-link">Eliminar</a>
                 </div>
             </div>
