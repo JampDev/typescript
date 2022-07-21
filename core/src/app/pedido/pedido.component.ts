@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Pedido } from '../models/pedido';
 import Swal from 'sweetalert2'
 
@@ -9,9 +9,14 @@ import Swal from 'sweetalert2'
 })
 export class PedidoComponent implements OnInit {
 
-  pedido: Pedido = new Pedido();
+  @ViewChild('buscador', {static: true}) buscador: ElementRef;
 
-  constructor() { }
+  pedido: Pedido = new Pedido();
+  mostrar:boolean = true;
+
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }
@@ -39,4 +44,18 @@ export class PedidoComponent implements OnInit {
     });
   }
 
+  ngDoCheck(){
+    //console.log('Realizaste algo');
+  }
+
+  ngAfterViewInit(){
+    this.buscador.nativeElement.focus();
+  }
+
+  ngOnDestroy(){    
+    this.pedido.pedidoDetalle.length = 0;
+    Swal.fire({
+      title: 'Estas abandonando los pedidos'
+    });
+  }
 }
