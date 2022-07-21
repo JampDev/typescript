@@ -20,4 +20,9 @@ export class PedidoDetalleComponent implements OnInit {
     this.seEliminoProducto.emit({id: pos})
   }
 
+  ngOnChanges(){
+    this.pedidoDetalle.length = 0;
+    console.log('Se asigno un valor al pedido detalle')
+  }
+
 }

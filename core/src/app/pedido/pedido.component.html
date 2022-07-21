@@ -1,8 +1,18 @@
 <p>Clientes: {{pedido.cliente}}</p>
 <p>Dirección: {{pedido.direccion}}</p>
 
+<button routerLink="/usuario">Ir a Usuario</button>
+
+<br><br>
+
+<input #buscador type="text" placeholder="Busque un producto">
+
+<br><br>
+
 <button (click)="agregarProducto()">Agregar Producto</button>
 
+<button (click)="mostrar =! mostrar">Mostrar</button>
 
-<app-pedido-detalle [pedidoDetalle]="pedido.pedidoDetalle" 
+
+<app-pedido-detalle *ngIf="mostrar" [pedidoDetalle]="pedido.pedidoDetalle" 
     (seEliminoProducto)="elHijoEliminoAlgo($event)"></app-pedido-detalle>
