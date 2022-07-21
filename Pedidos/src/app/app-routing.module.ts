@@ -4,6 +4,7 @@ import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.compo
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { HomeComponent } from './home/home.component';
+import { ListadoPedidosComponent } from './listado-pedidos/listado-pedidos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ProductosComponent } from './productos/productos.component';
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'agregar-cliente', component: AgregarClienteComponent},
   {path: 'productos', component: ProductosComponent},
   {path: 'pedidos', component: PedidosComponent},
-  {path: 'agregar-producto', component: AgregarProductoComponent}
+  {path: 'agregar-producto', component: AgregarProductoComponent},
+  {path: 'listado-pedidos', component: ListadoPedidosComponent}
 ];
 
 @NgModule({

@@ -15,4 +15,17 @@ export class PedidosComponent implements OnInit {
 
   }
 
+  calcularTotal(pos: number) {
+    this.pedidosServicio.pedido.actualizarCantidades(pos);
+    this.pedidosServicio.guardarLS();
+  }
+
+  guardar(){
+    this.pedidosServicio.guardarPedido();
+  }
+
+  eliminar(pos:number){
+    this.pedidosServicio.pedido.pedidoDetalle.splice(pos, 1);
+    this.pedidosServicio.guardarLS;
+  }
 }

@@ -4,7 +4,7 @@
             (input)="buscarClientes($event)">
     </form>
 
-    <button class="btn btn-primary mt-2" routerLink="/agregar-producto">Agregar Cliente</button>
+    <button class="btn btn-primary mt-2" routerLink="/agregar-cliente">Agregar Cliente</button>
 
     <div class="row mt-2">
         <div class="col-sm-6 col-lg-3" *ngFor="let cliente of listaClientes">
@@ -13,8 +13,7 @@
                     <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
                     <h6 class="card-subtitle">{{cliente.id}}</h6>
                     <p class="card-text">{{cliente.direccion}}</p>
-                    <a (click)="irProductos(cliente)" class="card-link">Agregar</a>
-                    <a href="#" class="card-link">Eliminar</a>
+                    <button class="btn btn-success" (click)="irProductos(cliente)">Seleccionar</button>
                 </div>
             </div>
         </div>
