@@ -1,0 +1,16 @@
+<table border="1px">
+    <tr>
+        <th>Cantidad</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Total</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr *ngFor="let pedido of pedidoDetalle, let pos = index">
+        <td>{{pedido.cantidad}}</td>
+        <td>{{pedido.producto}}</td>
+        <td>{{pedido.precio}}</td>
+        <td>{{pedido.total}}</td>
+        <td><button (click)="eliminar(pos)">Eliminar</button></td>
+    </tr>
+</table>
