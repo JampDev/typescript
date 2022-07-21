@@ -24,4 +24,11 @@ export class ProductosComponent implements OnInit {
     })
   }
 
+  agregar(producto: Producto){
+    this.pedidosServicio.pedido.agregarProducto(producto);
+    this.pedidosServicio.guardarLS();
+    console.log(this.pedidosServicio.pedido);
+    alert('Producto Agregado');
+  }
+
 }
