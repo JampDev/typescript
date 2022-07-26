@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="text-center">
+    <img src="assets/logo.png" alt="">
+    <h3>Bienvenido, por favor ingrese sus datos</h3>
+  </div>
+  <form [formGroup]="datosFormulario">
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+      <div class="alert alert-danger" role="alert" 
+        *ngIf="datosFormulario.controls['email'].invalid && datosFormulario.controls['email'].dirty">
+        <span *ngIf="datosFormulario.controls['email'].errors?.['required']">
+          El correo es requerido.
+        </span>
+        <span *ngIf="datosFormulario.controls['email'].errors?.['email']">
+          El correo no es valido.
+        </span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" (keyUp.enter)="ingresar()" class="form-control" id="password" formControlName="password">
+      <div class="alert alert-danger" role="alert" 
+        *ngIf="datosFormulario.controls['password'].invalid && datosFormulario.controls['password'].dirty">
+        <span *ngIf="datosFormulario.controls['password'].errors?.['required']">
+          La contraseña es requerida.
+        </span>
+      </div>
+    </div>
+    <button [disabled]="!datosFormulario.valid" (click)="ingresar()" type="submit"
+      class="btn btn-primary">Ingresar</button>
+  </form>
+  <div *ngIf="!datosCorrectos" class="alert alert-warning mt-2" role="alert">
+    {{msjError}}
+  </div>
+</div>
