@@ -8,18 +8,22 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
+import { FirestoreModule } from '@angular/fire/firestore';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    ListadoClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -29,10 +33,14 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    ReactiveFormsModule
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    ReactiveFormsModule,
+    FormsModule,
+    FirestoreModule
   ],
   providers: [
-    AngularFireAuth
+    AngularFireAuth,
+    FirestoreModule
   ],
   bootstrap: [AppComponent]
 })
