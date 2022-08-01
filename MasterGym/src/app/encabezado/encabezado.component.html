@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">MasterGym</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"
+        [collapse]="isCollapsed">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inscripción</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ver Inscripciones</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" dropdownToggle>
+                        Clientes
+                    </a>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                        <li><a class="dropdown-item" href="#">Agregar</a></li>                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Ver Clientes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" dropdownToggle>
+                        Precios
+                    </a>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                        <li><a class="dropdown-item" href="#">Agregar</a></li>                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Ver Precios</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" dropdownToggle>
+                        Reportes
+                    </a>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                        <li><a class="dropdown-item" href="#">Suscripciones Diarias</a></li>                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Suscripciones Mensuales</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Mas Vendidas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
