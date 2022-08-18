@@ -13,10 +13,9 @@ export class ListadoClientesComponent implements OnInit {
   }
 
   ngOnInit(): void {    
-    collectionData(collection(this.db, 'clientes')).subscribe(rsl => {
+    collectionData(collection(this.db, 'clientes'), { idField: 'id'}).subscribe(rsl => {
       this.clientes = rsl;
     });
-    
   }
 
 }
