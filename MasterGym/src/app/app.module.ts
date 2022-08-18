@@ -17,13 +17,16 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
 import { FirestoreModule } from '@angular/fire/firestore';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     EncabezadoComponent,
-    ListadoClientesComponent
+    ListadoClientesComponent,
+    AgregarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     ReactiveFormsModule,
     FormsModule,
-    FirestoreModule
+    FirestoreModule,
+    ProgressbarModule.forRoot()
   ],
   providers: [
     AngularFireAuth,
