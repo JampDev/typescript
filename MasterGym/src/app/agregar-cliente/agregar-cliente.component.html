@@ -67,7 +67,7 @@
             <div class="col-12">
                 <div class="form-group">
                     <label for="img">Imagen</label>
-                    <input type="file" id="img" class="form-control" formControlName="imgUrl">
+                    <input type="file" (change)="subirImagen($event)" id="img" class="form-control" formControlName="imgUrl">
                     <div class="alert alert-danger" role="alert"
                         *ngIf="datosFormulario.controls['imgUrl'].invalid && datosFormulario.controls['imgUrl'].dirty">
                         <span *ngIf="datosFormulario.controls['imgUrl'].errors?.['required']">
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <progressbar [value]="22" type="danger" [striped]="true">22%</progressbar>
+                <progressbar [value]="porcentajeCarga" type="danger" [striped]="true">{{porcentajeCarga}}</progressbar>
             </div>
         </div>
         <button class="btn btn-primary mt-3" 
