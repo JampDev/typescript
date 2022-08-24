@@ -19,7 +19,8 @@ import { FirestoreModule } from '@angular/fire/firestore';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
-import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/comp
     FormsModule,
     FirestoreModule,
     ProgressbarModule.forRoot(),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFirestoreModule
   ],
   providers: [
     AngularFireAuth,
