@@ -21,6 +21,10 @@ import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.compo
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MensajesService } from './services/mensajes.service';
+import { PreciosComponent } from './precios/precios.component';
+import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { SeleccionarClienteComponent } from './seleccionar-cliente/seleccionar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/f
     LoginComponent,
     EncabezadoComponent,
     ListadoClientesComponent,
-    AgregarClienteComponent
+    AgregarClienteComponent,
+    PreciosComponent,
+    InscripcionComponent,
+    SeleccionarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/f
   ],
   providers: [
     AngularFireAuth,
-    FirestoreModule
+    FirestoreModule,
+    MensajesService
   ],
   bootstrap: [AppComponent]
 })

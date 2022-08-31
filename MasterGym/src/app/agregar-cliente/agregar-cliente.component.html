@@ -80,7 +80,9 @@
                 <progressbar [value]="porcentajeCarga" type="danger" [striped]="true">{{porcentajeCarga}}</progressbar>
             </div>
         </div>
-        <button class="btn btn-primary mt-3" 
-            [disabled]="datosFormulario.invalid" (click)="agregar()">Agregar</button>
+        <button *ngIf="!esEditable" class="btn btn-primary mt-3" 
+            [disabled]="datosFormulario.invalid && !urlImagen" (click)="agregar()">Agregar</button>
+        <button *ngIf="esEditable" class="btn btn-primary mt-3" 
+            [disabled]="datosFormulario.invalid && !urlImagen" (click)="editar()">Editar</button>
     </form>
 </div>
