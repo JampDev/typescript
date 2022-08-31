@@ -1,0 +1,25 @@
+<div class="clientes">
+  <div class="form-group" *ngIf="!nombre">
+    <label for="cliente">Cliente</label>
+    <input type="text" id="cliente" class="form-control" (input)="buscarClt($event)">
+  </div>
+  <div class="form-group" *ngIf="nombre">
+    <label for="clienteSel">Cliente</label>
+    <div class="row">
+      <div class="col-sm-10">
+        <input disabled type="text" id="clienteSel" class="form-control" [(ngModel)]="nombre">
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-danger" (click)="limpiar()">Cancelar</button>
+      </div>
+    </div>        
+  </div>
+  <div class="list-group mt-2">
+    <div *ngFor="let clt of clientes">
+      <a *ngIf="clt.visible" class="list-group-item list-group-item-action"
+        (click)="seleccionarClt(clt)">
+        {{clt.nombre}} {{clt.apellido}}
+      </a>
+    </div>
+  </div>
+</div>
