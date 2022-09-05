@@ -6,16 +6,38 @@
             </app-seleccionar-cliente>
             <div>
                 <label for="precio">Precio</label>
-                <select (change)="seleccionarPrecio($event)" name="precio" id="precio" class="form-control">
+                <select [(ngModel)]="idPrecio" (change)="seleccionarPrecio($event)" name="precio" id="precio" class="form-control">
                     <option [value]="null">Seleccione</option>
                     <option *ngFor="let prc of precios" [value]="prc.id">{{prc.nombre}}</option>
                 </select>
             </div>
-            <br><br><br><br><br>
+            <div>
+                <label for="ferchaI">Fecha de Inicio</label>
+                <input type="text" disabled class="form-control" [value]="inscripcion.fecha | date">
+            </div>
+            <div>
+                <label for="ferchaF">Fecha Fin</label>
+                <input type="text" disabled class="form-control"[value]="inscripcion.fechaFin | date">
+            </div>
+            <div>
+                <label for="subTotal">SubTotal</label>
+                <input type="text" disabled class="form-control" [value]="inscripcion.subTotal">
+            </div>
+            <div>
+                <label for="iva">Iva</label>
+                <input type="text" disabled class="form-control" [value]="inscripcion.iva">
+            </div>
+            <div>
+                <label for="total">Total</label>
+                <input type="text" disabled class="form-control" [value]="inscripcion.total">
+            </div>
+            <br>
             <button class="btn btn-primary" (click)="guardar()">Guardar</button>
         </div>
         <div class="col-lg-6">
-
+            <div *ngIf="clienteSeleccionado.imgUrl" class="img-cliente">
+                <img [src]="clienteSeleccionado.imgUrl" alt="">
+            </div>
         </div>
     </div>
 </div>
