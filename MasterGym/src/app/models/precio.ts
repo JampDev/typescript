@@ -6,5 +6,5 @@ export class Precio{
     costo:number;
     duracion:number;
     tipoDuracion: number;
-    ref: DocumentReference
+    ref: any
 }
