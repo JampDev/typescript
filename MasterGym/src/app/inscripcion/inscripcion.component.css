@@ -1,0 +1,7 @@
+.img-cliente img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}

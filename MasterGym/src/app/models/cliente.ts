@@ -6,7 +6,7 @@ export class Cliente{
     apellido:string;
     correo:string;
     fechaNacimiento:Date;
-    imgurl:string;
+    imgUrl:string;
     telefono:number;
     cedula:string;
     ref: DocumentReference;
